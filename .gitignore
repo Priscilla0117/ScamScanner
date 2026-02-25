@@ -1,4 +1,4 @@
-# Miscellaneous
+﻿# Miscellaneous
 *.class
 *.log
 *.pyc
@@ -42,13 +42,11 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# ── Sensitive / Secret files ──────────────────────────────────
+# â”€â”€ Sensitive / Secret files â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # Firebase config (contains project IDs & API keys)
-google-services.json
-GoogleService-Info.plist
-lib/firebase_options.dart
 .env
 *.env
 
 # Temp / scratch files
 *.txt
+
