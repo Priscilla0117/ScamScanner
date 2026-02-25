@@ -153,13 +153,6 @@ lib/
     ├── ocr_service.dart         # ML Kit text recognition
     └── tts_service.dart         # Text-to-speech readback
 ```
-
----
-
-## 👥 Team
-
-Built with ❤️ for the hackathon — protecting Malaysian families, one scan at a time.
-
 ---
 
 ## 📄 License
