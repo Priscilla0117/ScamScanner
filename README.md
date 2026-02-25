@@ -153,8 +153,3 @@ lib/
     ├── ocr_service.dart         # ML Kit text recognition
     └── tts_service.dart         # Text-to-speech readback
 ```
----
-
-## 📄 License
-
-MIT License — feel free to use, adapt, and build upon this project.
