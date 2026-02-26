@@ -7,7 +7,6 @@
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../services/firebase_service.dart';
 import 'login_screen.dart';
 import 'text_input_screen.dart';
@@ -15,14 +14,28 @@ import 'image_input_screen.dart';
 import 'voice_input_screen.dart';
 import 'history_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final FirebaseService _firebaseService = FirebaseService();
+  late final String _displayName;
+
+  @override
+  void initState() {
+    super.initState();
+    final user = _firebaseService.currentUser;
+    _displayName = user?.displayName ?? user?.phoneNumber ?? 'Friend';
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final FirebaseService firebaseService = FirebaseService();
-    final User? user = firebaseService.currentUser;
-    final displayName = user?.displayName ?? user?.phoneNumber ?? 'Friend';
+    final firebaseService = _firebaseService;
+    final displayName = _displayName;
 
     return Scaffold(
       backgroundColor: const Color(0xFF1A1A2E),

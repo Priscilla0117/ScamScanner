@@ -31,11 +31,8 @@ dependencies:
   # ── On-device OCR ──
   google_mlkit_text_recognition: ^0.13.1
 
-  # ── HTTP for REST calls ──
-  http: ^1.2.2
 
   # ── Utilities ──
-  intl: ^0.19.0
   url_launcher: ^6.3.0
   shared_preferences: ^2.3.1
 

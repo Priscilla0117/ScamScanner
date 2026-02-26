@@ -204,11 +204,12 @@ class _ResultScreenState extends State<ResultScreen>
   Future<void> _sendWhatsAppAlert(String phone) async {
     final scamType = widget.result.scamType;
     final risk     = widget.result.classification;
-    final preview  = widget.originalText.length > 100
-        ? '${widget.originalText.substring(0, 100)}...'
-        : widget.originalText;
+    final text     = widget.originalText;
 
-    final message = Uri.encodeComponent(
+    // Safe preview: guard against empty text before substring
+    final preview = text.length > 100 ? '${text.substring(0, 100)}...' : text;
+
+    final waMessage = Uri.encodeComponent(
       '🚨 *SCAM ALERT dari ScamScanner*\n\n'
       'Saya baru menerima mesej yang mencurigakan.\n'
       '⚠️ *Risiko: $risk Risk*\n'
@@ -218,9 +219,14 @@ class _ResultScreenState extends State<ResultScreen>
       '─ Dihantar melalui ScamScanner 🛡️',
     );
 
+    // Safe SMS body: clamp only if text is not empty
+    final smsBody = text.isEmpty
+        ? 'ScamScanner alert'
+        : text.substring(0, text.length.clamp(0, 160));
+
     // Try WhatsApp first, fall back to SMS
-    final waUri   = Uri.parse('whatsapp://send?phone=$phone&text=$message');
-    final smsUri  = Uri.parse('sms:$phone?body=${Uri.encodeComponent(widget.originalText.substring(0, widget.originalText.length.clamp(0, 160)))}');
+    final waUri  = Uri.parse('whatsapp://send?phone=$phone&text=$waMessage');
+    final smsUri = Uri(scheme: 'sms', path: phone, queryParameters: {'body': smsBody});
 
     if (await canLaunchUrl(waUri)) {
       await launchUrl(waUri);

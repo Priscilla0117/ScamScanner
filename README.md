@@ -103,15 +103,6 @@ Every scan is logged to **Cloud Firestore** and viewable in a history screen wit
 
 ##  Quick Start for Judges
 
-> 🔑 **Demo Login Credentials (for Phone OTP login):**
->
-> | Field | Value |
-> |---|---|
-> | **Phone Number** | `+60121234567` |
-> | **OTP Code** | `123456` |
->
-> *(This is a Firebase test number — no real SMS is sent. Google Sign-In works with any Google account.)*
-
 >  **Firebase is pre-configured  no account setup needed. Just clone and run.**
 
 ```bash
@@ -184,6 +175,10 @@ service cloud.firestore {
 
 ---
 
+<div align="center">
 
+Built with  for the hackathon
+
+**Protecting Malaysian families, one scan at a time. **
 
 </div>

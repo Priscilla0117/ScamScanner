@@ -25,7 +25,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.scam_scanner"
-        // Firebase Auth requires minSdk 23
+        // Firebase Auth + Google Sign-In require minSdk 23
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

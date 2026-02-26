@@ -60,6 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() { _isLoading = true; _errorMessage = ''; });
     try {
       await _firebaseService.signInWithGoogle();
+      if (mounted) setState(() => _isLoading = false);
       _navigateToHome();
     } catch (e) {
       _showError('Google sign-in failed: ${e.toString().split(']').last.trim()}');
