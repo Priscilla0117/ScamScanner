@@ -181,12 +181,3 @@ service cloud.firestore {
 }
 ```
 
----
-
-<div align="center">
-
-Built with  for the hackathon
-
-**Protecting Malaysian families, one scan at a time. **
-
-</div>
