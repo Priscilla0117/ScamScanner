@@ -50,3 +50,5 @@ app.*.map.json
 # Temp / scratch files
 *.txt
 
+# Hide my secret environment variables
+.env

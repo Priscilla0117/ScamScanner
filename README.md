@@ -101,7 +101,33 @@ Every scan is logged to **Cloud Firestore** and viewable in a history screen wit
 
 ---
 
-##  Quick Start 
+## 🚀 Quick Start
+
+> **⚠️ Device Note:** This app is optimized for **Physical Android Devices**. 
+> Due to the use of camera (OCR) and microphone (Voice Input), using a real Android phone via USB is highly recommended over an emulator.
+
+### 1. 🔑 API Configuration
+This project uses **Google Gemini 2.5 Flash**. For security, the API key is not stored in the repository.
+1. Locate the `.env.example` file in the root directory.
+2. **Rename** it to `.env`.
+3. Open `.env` and replace `insert_provided_api_key_here` with the **Gemini API Key** provided in our documentation link( that submitted in google form).
+
+### 2. 📲 Build and Run
+```bash
+# Clone the repository
+git clone https://github.com/Priscilla0117/ScamScanner.git
+
+# Enter the Flutter project folder
+cd ScamScanner
+
+# Install dependencies
+flutter pub get
+
+# Connect your Android phone (Ensure developer mode and USB Debugging is ON)
+# Run the app
+flutter run
+```bash
+
 > 🔑 Demo Login Credentials (for Phone OTP login):
 >
 > | Field | Value |
@@ -113,20 +139,7 @@ Every scan is logged to **Cloud Firestore** and viewable in a history screen wit
 
 >  **Firebase is pre-configured  no account setup needed. Just clone and run.**
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/Priscilla0117/ScamScanner.git
-
-# 2. Enter the Flutter project folder
-cd ScamScanner/scam_scanner
-
-# 3. Install dependencies
-flutter pub get
-
-# 4. Connect an Android device (USB debugging on), then run:
-flutter run
 ```
-
 >  `google-services.json` and `firebase_options.dart` are included in the repo.
 > Sign in with any Google account  no Firebase project setup required.
 

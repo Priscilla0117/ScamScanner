@@ -5,7 +5,7 @@
 // Replace 'YOUR_GEMINI_API_KEY' with your key from:
 // https://aistudio.google.com/app/apikey
 // ============================================================
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 // ── Result model returned by GeminiService ────────────────────
@@ -41,7 +41,7 @@ class GeminiService {
   GeminiService()
       : _model = GenerativeModel(
           model: 'gemini-2.5-flash',
-          apiKey: _apiKey,
+          apiKey: dotenv.env['GEMINI_API_KEY'] ?? '',
         );
 
   /// Analyzes the given [text] for scam content.
